@@ -95,19 +95,14 @@ Paste the Origin CA certificate and private key from Cloudflare:
 
 ```bash
 install -d -m 700 /etc/nginx/cf
-cat > /etc/nginx/cf/cert.pem <<'EOF'
------BEGIN CERTIFICATE-----
-PASTE_CLOUDFLARE_ORIGIN_CERTIFICATE_HERE
------END CERTIFICATE-----
-EOF
 
-cat > /etc/nginx/cf/key.pem <<'EOF'
------BEGIN PRIVATE KEY-----
-PASTE_CLOUDFLARE_ORIGIN_PRIVATE_KEY_HERE
------END PRIVATE KEY-----
-EOF
+# Paste the full Origin CA certificate PEM into this file.
+${EDITOR:-nano} /etc/nginx/cf/cert.pem
 
-chmod 600 /etc/nginx/cf/key.pem
+# Paste the full Origin CA private key PEM into this file.
+${EDITOR:-nano} /etc/nginx/cf/key.pem
+
+chmod 600 /etc/nginx/cf/cert.pem /etc/nginx/cf/key.pem
 openssl x509 -in /etc/nginx/cf/cert.pem -noout -subject -issuer -dates
 ```
 
