@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cloudflare VLESS-WS"
+  short_description: "Deploy VLESS-WS behind Cloudflare"
+  default_prompt: "Use $vps-cloudflare-nginx-vless-ws to deploy and verify a Cloudflare proxied VLESS WebSocket node."

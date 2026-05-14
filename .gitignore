@@ -1,0 +1,31 @@
+.env
+.env.*
+!.env.example
+.envrc
+
+# Generated secrets and client artifacts
+secrets.env
+*.yaml
+*.yml
+!agents/openai.yaml
+*uri*.txt
+*link*.txt
+config.json
+cert.pem
+key.pem
+
+# Local logs and tool caches
+*.log
+out/
+tmp/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
